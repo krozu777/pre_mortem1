@@ -27,9 +27,8 @@ const sketch = (p) => {
     p.setup = () => {
         // Ajusta el tamaño del canvas para que simule un celular y sea responsivo.
         // El ancho máximo es de 400px o el 80% del ancho de la ventana, el que sea menor.
-        const sizeWidth = p.min(p.windowWidth * 0.8, 400);
-        const sizeHeight = sizeWidth * 2; // El doble de alto para simular un celular.
-        p.createCanvas(sizeWidth, sizeHeight); // Crea el canvas. No se necesita .parent() en el editor web.
+        p.createCanvas(p.windowWidth, p.windowHeight);
+ // Crea el canvas. No se necesita .parent() en el editor web.
 
         p.noStroke(); // No dibujar bordes para las formas (glitches, contador).
         p.pixelDensity(1); // Asegura que los píxeles se dibujen uno a uno en pantallas de alta densidad.
@@ -110,7 +109,7 @@ const sketch = (p) => {
 
             // Limitar el número total de glitches para evitar sobrecarga de rendimiento.
             // Esto asegura que el array de glitches no crezca indefinidamente.
-            const maxGlitchesToKeep = MAX_TOUCHES * 15; // Un valor aproximado para mantener la fluidez.
+            const maxGlischesToKeep = MAX_TOUCHES * 15; // Un valor aproximado para mantener la fluidez.
             if (glitches.length > maxGlitchesToKeep) {
                 glitches.splice(0, glitches.length - maxGlitchesToKeep); // Elimina los glitches más antiguos.
             }
@@ -138,9 +137,8 @@ const sketch = (p) => {
     // p.windowResized se ejecuta automáticamente cuando la ventana del navegador cambia de tamaño.
     p.windowResized = () => {
         // Recalcula el tamaño del canvas para mantener la proporción de celular y la responsividad.
-        const sizeWidth = p.min(p.windowWidth * 0.8, 400);
-        const sizeHeight = sizeWidth * 2;
-        p.resizeCanvas(sizeWidth, sizeHeight);
+        p.resizeCanvas(p.windowWidth, p.windowHeight);
+
         // Si el sketch estaba detenido (muerto), se reanuda temporalmente para asegurar un redibujo correcto
         // después del redimensionamiento, pero luego p.draw lo volverá a detener si 'isDead' sigue siendo true.
         if (isDead) {
