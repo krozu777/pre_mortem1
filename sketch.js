@@ -109,10 +109,10 @@ const sketch = (p) => {
 
             // Limitar el número total de glitches para evitar sobrecarga de rendimiento.
             // Esto asegura que el array de glitches no crezca indefinidamente.
-            const maxGlischesToKeep = MAX_TOUCHES * 15; // Un valor aproximado para mantener la fluidez.
+           /*  const maxGlischesToKeep = MAX_TOUCHES * 15; // Un valor aproximado para mantener la fluidez.
             if (glitches.length > maxGlitchesToKeep) {
                 glitches.splice(0, glitches.length - maxGlitchesToKeep); // Elimina los glitches más antiguos.
-            }
+            } */
 
             // Actualizar el mensaje de estado.
             if (counter === 0) {
