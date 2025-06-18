@@ -6,7 +6,7 @@ const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial
 
 let phoneScreenImg; // Variable para almacenar la imagen de la pantalla del celular
 let counter = 0; // Contador de toques
-const MAX_TOUCHES = 100; // Número máximo de toques antes de la "muerte"
+const MAX_TOUCHES = 50; // Número máximo de toques antes de la "muerte"
 let glitches = []; // Array para almacenar los glitches individuales
 let isDead = false; // Estado de la aplicación: ¿el celular ha "muerto"?
 
